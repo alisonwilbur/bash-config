@@ -1,0 +1,49 @@
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+#alias git='git-achievements'
+alias la='ls -la'
+
+alias ptail="tail -f /var/log/php/php_error.log | perl -pe 's/.*PAGETRACE.*/\e[1;42m$&\e[0m/g'"
+alias phplog="tail -n 200 -f /var/log/php/php_error.log"
+
+alias vi='/bin/env vim'
+alias ucd='cd /usr/local/pusher/ups'
+alias acd='cd /usr/local/pusher/atlast'
+alias unfatsnap='/bin/env sudo -u root /usr/local/pusher/bin/unfatsnap'
+alias covepull='sudo - u zulily /usr/local/pusher/bin/covepull'
+
+#alias tmux='if /usr/bin/tmux has; then /usr/bin/tmux attach; else /usr/bin/tmux new; fi'
+alias tls='tmux list-sessions'
+
+# screen aliases
+alias sls='screen -ls'
+alias sc='screen -Ddr'
+
+alias grep='grep --color=always -r --exclude-dir="*/tmp/cache/templates" --exclude=*.min.js --exclude=*.log --exclude-dir=*css/bootstrap-3.0.0/*'
+alias g='grep'
+alias less='less -R'
+
+alias lroot='cd $LROOT'
+alias htd='cd $LROOT'
+alias droot='cd $DROOT'
+alias pl='cd $PL'
+alias pb='cd $PB'
+alias zudash='cd /var/www/htdocs/zulily-zudash'
+
+alias gd='git diff'
+alias gdw='git diff --word-diff'
+alias gs='git status'
+alias gco='git co --'
+alias ga='git add'
+alias gr='git reset HEAD'
+alias gp='git pull --rebase'
+
+alias ta='tmux a'
+
+function grco {
+  git reset HEAD $1;
+  git co $1;
+}  

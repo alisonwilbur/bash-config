@@ -53,7 +53,7 @@ PS1="${YELLOW}\t${COLOR}--${MAGENTA}\u${COLOR}@${GREEN}\h${COLOR}--${BLUE}\w${CO
 
 # add the current git branch
 source ~/git-prompt.sh
-PS1="--\[$PS1\]--bbb\$(__git_ps1)"
+CURRENT_BRANCH='$(__git_ps1 "--(%s)")'
 
-export PS1="${PS1}--$ "
+export PS1="${PS1}${CURRENT_BRANCH}--$ "
 

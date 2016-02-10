@@ -19,7 +19,6 @@ if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local
 fi
 
-
 # User specific environment and startup programs
 
 PATH=$PATH:$HOME/bin:/usr/local/bin
@@ -29,4 +28,32 @@ export PATH
 
 umask 002
 
+
+
+
+
+# ---- bash prompt --------------------------------------------------
+
+# default text color in theme
+COLOR="\033[m\]"
+# cool text colors
+NORMAL="\[\033[0m\]"
+RED="\[\033[31;1m\]"
+YELLOW="\[\033[33;1m\]"
+WHITE="\[\033[37;1m\]"
+BLUE="\033[0;36m\]"
+MAGENTA="\[\033[35;1m\]"
+GREEN="\033[0;32m\]"
+
+# \h = hostname
+# \u = username
+# \t = time
+# \w = directory (lower w is the whole directory, W is the current folder)
+PS1="${YELLOW}\t${COLOR}--${MAGENTA}\u${COLOR}@${GREEN}\h${COLOR}--${BLUE}\w${COLOR}"
+
+# add the current git branch
+source ~/git-prompt.sh
+PS1="--\[$PS1\]--bbb\$(__git_ps1)"
+
+export PS1="${PS1}--$ "
 

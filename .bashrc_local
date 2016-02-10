@@ -2,37 +2,3 @@ export SVN_EDITOR=emacs
 export EDITOR=emacs
 export VISUAL=emacs
 
-
-# ---- bash prompt --------------------------------------------------
-# All the [\033[_;__m\] blocks (where _ is a number) are colors
-# lower w is the whole directory, W is the current folder
-# Add this back after 1st bracket for the hostname: [\033[1;34m\] \h or \H
-# \h = hostname hostname
-# \u = username
-# \t = time
-# \w = directory
-
-# default text color in theme
-COLOR="\033[m\]"
-# cool text colors
-NORMAL="\[\033[0m\]"
-RED="\[\033[31;1m\]"
-YELLOW="\[\033[33;1m\]"
-WHITE="\[\033[37;1m\]"
-BLUE="\033[0;36m\]"
-MAGENTA="\[\033[35;1m\]"
-GREEN="\033[0;32m\]"
-
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-PS1="${YELLOW}\t${COLOR}--${MAGENTA}\u${COLOR}@${GREEN}\h${COLOR}--${BLUE}\w${COLOR}"
-if [ -d .git ]; then
-  #PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
-  PS1="--${PS1}--b$(parse_git_branch)"
-  #. /etc/bash_completion.d/git
-  #~~\[\033[0;33m\]$(__git_ps1 "(%s)")\[\033[0m\]$ "
-  #blue tildes export PS1='\033[34m\]~~\033[0;36m\]\u\033[34m\]~\033[0;32m\]\w\[\033[0;37m\]\033[34m\]~~\[\033[0;33m\]$(__git_ps1 "(%s)")\[\033[0m\]$ '
-fi
-export PS1="${PS1}--$ "

@@ -15,7 +15,7 @@ alias ta='tmux a'
 alias sls='screen -ls'
 alias sc='screen -Ddr'
 
-alias grep='grep --color=always -r --exclude-dir="*/tmp/cache/templates" --exclude=*.min.js --exclude=*.log --exclude-dir=*css/bootstrap-3.0.0/*'
+alias grep='grep -r --color=always --exclude=*.min.js --exclude=*.log --exclude-dir="*/tmp/cache/templates" --exclude-dir=*css/bootstrap-3.0.0/*'
 alias g='grep'
 alias less='less -R'
 
@@ -28,7 +28,11 @@ alias gr='git reset HEAD'
 alias gp='git pull --rebase'
 
 
-function gcor {
+function grh {
+  git reset HEAD $1;
+}  
+
+function grhco {
   git reset HEAD $1;
   git co $1;
 }  

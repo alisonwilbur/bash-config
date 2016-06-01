@@ -1,3 +1,5 @@
+# .bashrc_aliases
+
 # User specific aliases and functions
 
 alias rm='rm -i'
@@ -36,3 +38,13 @@ function grhco {
   git reset HEAD $1;
   git co $1;
 }  
+
+# Set up a symlink so that sublime can be opened from the command line
+# TODO: what happens if Sublime isn't installed?
+sublime_link='/usr/local/bin/sublime'
+if [ ! -L ${sublime_link} ] || [ ! -e ${sublime_link} ] ; then
+  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
+fi
+
+
+

@@ -1,25 +1,32 @@
 # .bashrc_aliases
 
-# User specific aliases and functions
+
+### shortcuts
 
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias la='ls -la'
+alias emoji='cd ~/Documents/slack-emoji/emoji/'
 
-alias vi='/bin/env vim'
-
+### window management
+# tmux
 #alias tmux='if /usr/bin/tmux has; then /usr/bin/tmux attach; else /usr/bin/tmux new; fi'
-alias tls='tmux list-sessions'
-alias ta='tmux a'
+#alias tls='tmux list-sessions'
+#alias ta='tmux a'
+# screen
+#alias sls='screen -ls'
+#alias sc='screen -Ddr'
 
-# screen aliases
-alias sls='screen -ls'
-alias sc='screen -Ddr'
 
-alias grep='grep -r --color=always --exclude=*.min.js --exclude=*.log --exclude-dir="*/tmp/cache/templates" --exclude-dir=*css/bootstrap-3.0.0/*'
-alias g='grep'
+### grep
+
+alias g='grep -r --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,*build/main.js} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git}'
 alias less='less -R'
+
+grep -r --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,*build/main.js} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git} "landing" .
+
+### git 
 
 alias gd='git diff'
 alias gdw='git diff --word-diff'
@@ -27,8 +34,9 @@ alias gs='git status'
 alias gco='git co --'
 alias ga='git add'
 alias gr='git reset HEAD'
-alias gp='git pull --rebase'
-
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gb='git br'
 
 function grh {
   git reset HEAD $1;
@@ -39,12 +47,23 @@ function grhco {
   git co $1;
 }  
 
+
+### text editors 
+
+alias vi='/bin/env vim'
+
 # Set up a symlink so that sublime can be opened from the command line
-# TODO: what happens if Sublime isn't installed?
 sublime_link='/usr/local/bin/sublime'
 if [ ! -L ${sublime_link} ] || [ ! -e ${sublime_link} ] ; then
   ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
 fi
+
+
+### development
+
+alias mtw='mvn clean install -pl websites -am'
+alias mtce='mvn clean install -pl ce_tool -am'
+
 
 
 

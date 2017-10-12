@@ -19,6 +19,11 @@ if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local
 fi
 
+# Git auto-complete for branch names, etc
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 # User specific environment and startup programs
 
 PATH=$PATH:$HOME/bin:/usr/local/bin
@@ -57,3 +62,11 @@ CURRENT_BRANCH='$(__git_ps1 "--(%s)")'
 
 export PS1="${PS1}${CURRENT_BRANCH}--$ "
 
+# expand the Terminal history to be biggerrrrr
+HISTFILESIZE=1000000000 
+HISTSIZE=1000000
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

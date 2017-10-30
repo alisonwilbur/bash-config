@@ -21,10 +21,8 @@ alias emoji='cd ~/Documents/slack-emoji/emoji/'
 
 ### grep
 
-alias g='grep -r --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,*build/main.js} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git}'
+alias g='grep -r --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,emailable-report.html,*build/main.js} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git}'
 alias less='less -R'
-
-grep -r --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,*build/main.js} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git} "landing" .
 
 ### git 
 

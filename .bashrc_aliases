@@ -51,11 +51,12 @@ function grhco {
 alias vi='/bin/env vim'
 
 # Set up a symlink so that sublime can be opened from the command line
-sublime_link='/usr/local/bin/sublime'
-if [ ! -L ${sublime_link} ] || [ ! -e ${sublime_link} ] ; then
-  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
-fi
-
+# Note March 2018: the if block stopped working, I just ran the following one-liner instead:
+# mkdir ~/bin; ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/sublime
+# sublime_link='/usr/local/bin/sublime'
+#if [ ! -L ${sublime_link} ] || [ ! -e ${sublime_link} ] ; then
+#  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
+#fi
 
 ### development
 

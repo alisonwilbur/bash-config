@@ -50,17 +50,20 @@ BLUE="\033[0;36m\]"
 MAGENTA="\[\033[35;1m\]"
 GREEN="\033[0;32m\]"
 
+
 # \h = hostname
 # \u = username
 # \t = time
 # \w = directory (lower w is the whole directory, W is the current folder)
 PS1="${YELLOW}\t${COLOR}--${MAGENTA}\u${COLOR}@${GREEN}\h${COLOR}--${BLUE}\w${COLOR}"
 
-# add the current git branch
-source ~/git-prompt.sh
-CURRENT_BRANCH='$(__git_ps1 "--(%s)")'
 
-export PS1="${PS1}${CURRENT_BRANCH}--$ "
+# add the current git branch
+if [ -f ~/.git-completion.bash ]; then
+  source ~/git-prompt.sh
+  CURRENT_BRANCH='$(__git_ps1 "--(%s)")'
+  export PS1="${PS1}${CURRENT_BRANCH}--$ "
+fi
 
 # expand the Terminal history to be biggerrrrr
 HISTFILESIZE=1000000000 

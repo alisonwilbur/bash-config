@@ -21,8 +21,8 @@ ln -s ~/Code/bash-config/.git-completion.bash ~/ ;
 ln -s ~/Code/bash-config/.gitconfig ~/ ;
 ln -s ~/Code/bash-config/.gitignore ~/ ;
 ln -s ~/Code/bash-config/.tmux.config ~/ ;
-ln -s ~/Code/bash-config/.xshrc ~/ ;
 ln -s ~/Code/bash-config/.zshrc ~/ ;
+ln -s ~/Code/bash-config/git-prompt.sh ~/ ;
 ...
 ```
 

@@ -6,17 +6,13 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bashrc_aliases, instead of adding them here directly.
 if [ -f ~/.bashrc_aliases ]; then
   . ~/.bashrc_aliases
 fi
 
-# Local modifications.
-# You may want to put all of your local bash modifications into a
-# separate file like ~/.bashrc_local instead of adding them here directly.
-if [ -f ~/.bashrc_local ]; then
-  . ~/.bashrc_local
+# Nordstrom-only stuff
+if [ -f ~/.bashrc_nord ]; then
+  . ~/.bashrc_nord
 fi
 
 # Git auto-complete for branch names, etc
@@ -24,17 +20,24 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+
+# ---- exports --------------------------------------------------
+
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin:/usr/local/bin
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+PATH=$PATH:$HOME/bin
+# for python and AWS CLI
+PATH=$PATH:~/.local/bin
+
 export PATH
 
-
+export SVN_EDITOR=emacs
+export EDITOR=emacs
+export VISUAL=emacs
 
 umask 002
-
-
-
 
 
 # ---- bash prompt --------------------------------------------------
@@ -69,6 +72,8 @@ fi
 HISTFILESIZE=1000000000 
 HISTSIZE=1000000
 
+
+# ---- NVM --------------------------------------
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

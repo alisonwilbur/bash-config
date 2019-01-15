@@ -1,4 +1,0 @@
-export SVN_EDITOR=emacs
-export EDITOR=emacs
-export VISUAL=emacs
-

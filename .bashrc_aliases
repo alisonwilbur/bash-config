@@ -21,7 +21,7 @@ alias emoji='cd ~/Documents/slack-emoji/emoji/'
 
 ### grep
 
-alias g='grep -r --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,emailable-report.html,*build/main.js} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git,test-output}'
+alias g='grep -r --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,emailable-report.html,*build/main.js} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git,test-output,.nui}'
 alias less='less -R'
 
 ### git 
@@ -58,11 +58,18 @@ alias vi='/bin/env vim'
 #  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
 #fi
 
-### development
 
-alias mtw='mvn clean install -pl websites -am'
-alias mtce='mvn clean install -pl ce_tool -am'
+### RY development
 
+#alias mtw='mvn clean install -pl websites -am'
+#alias mtce='mvn clean install -pl ce_tool -am'
+
+
+### N development
+
+alias bs='npm run build && npm run start'
+alias npmb='npm run build'
+alias npms='npm run start'
 
 
 

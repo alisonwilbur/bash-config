@@ -25,7 +25,8 @@ fi
 
 # User specific environment and startup programs
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+# want to be running Java 8
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 PATH=$PATH:$HOME/bin
 # for python and AWS CLI
@@ -76,5 +77,10 @@ HISTSIZE=1000000
 # ---- NVM --------------------------------------
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+
+
+
+

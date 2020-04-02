@@ -36,6 +36,7 @@ alias gr='git reset HEAD'
 alias gp='git pull'
 alias gpr='git pull --rebase'
 alias gb='git br'
+alias gph='git push origin HEAD'
 
 function grh {
   git reset HEAD $1;
@@ -60,10 +61,6 @@ alias vi='/bin/env vim'
 #fi
 
 
-### RY development
-
-#alias mtw='mvn clean install -pl websites -am'
-#alias mtce='mvn clean install -pl ce_tool -am'
 
 
 ### N development

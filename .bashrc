@@ -81,6 +81,21 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 
+# ---- Manage Java
+
+# JENV - managed java version
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# more details at https://stackoverflow.com/questions/52524112/how-do-i-install-java-on-mac-osx-allowing-version-switching
+
+# open jdk https://github.com/AdoptOpenJDK/homebrew-openjdk
+# jdkv() {
+#     version=$1
+#     export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+#     java -version
+#  }
+
 
 
 

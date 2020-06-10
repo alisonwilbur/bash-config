@@ -32,3 +32,8 @@ setopt COMPLETE_IN_WORD
 
 # autoload -U colors
 #colors
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi

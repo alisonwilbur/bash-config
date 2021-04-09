@@ -1,9 +1,17 @@
 [user]
-	email = awilbur@forhims.com
+	email = alison.wilbur@nordstrom.com
 	name = Alison Wilbur
+[push]
+  default = matching
+[color]
+  branch = auto
+  diff   = auto
+  status = auto
 [core]
 	editor = subl -n -w
 	autocrlf = false
+[achievement]
+  upload = false
 [alias]
   s = status
   br = branch
@@ -20,3 +28,9 @@
   lgf = log --stat
   logf = log --stat
   prb = pull --rebase
+[merge]
+	tool = tortoisemerge
+[diff]
+	tool = kompare
+[diff "kdiff3"]
+	path = /usr/libexec/git-core/mergetools/kdiff3

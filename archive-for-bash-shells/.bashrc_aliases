@@ -1,0 +1,75 @@
+# .bashrc_aliases
+
+
+### shortcuts
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias la='ls -la'
+alias emoji='cd ~/Documents/slack-emoji/emoji/'
+
+### window management
+# tmux
+#alias tmux='if /usr/bin/tmux has; then /usr/bin/tmux attach; else /usr/bin/tmux new; fi'
+#alias tls='tmux list-sessions'
+#alias ta='tmux a'
+# screen
+#alias sls='screen -ls'
+#alias sc='screen -Ddr'
+
+
+### grep
+
+# -I skips binary files
+
+alias g='grep -Ir --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,emailable-report.html,*build/main.js,*.js.map,*.server.js,package-lock.json} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git,test-output,.nui,lib,platform-release,build,.nyc_output,lcov-report,coverage}'
+
+alias less='less -R'
+
+### git 
+
+alias gd='git diff'
+alias gdw='git diff --word-diff'
+alias gs='git status'
+alias gco='git co --'
+alias ga='git add'
+alias gr='git reset HEAD'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gb='git br'
+alias gph='git push origin HEAD'
+
+function grh {
+  git reset HEAD $1;
+}  
+
+function grhco {
+  git reset HEAD $1;
+  git co $1;
+}  
+
+
+### text editors 
+
+alias vi='/bin/env vim'
+
+# Set up a symlink so that sublime can be opened from the command line
+# Note March 2018: the if block stopped working, I just ran the following one-liner instead:
+# mkdir ~/bin; ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/sublime
+# sublime_link='/usr/local/bin/sublime'
+#if [ ! -L ${sublime_link} ] || [ ! -e ${sublime_link} ] ; then
+#  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
+#fi
+
+
+
+
+### N development
+
+alias bs='npm run build && npm run start'
+alias npmb='npm run build'
+alias npms='npm run start'
+
+
+

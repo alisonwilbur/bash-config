@@ -64,6 +64,10 @@ export SVN_EDITOR=emacs
 export EDITOR=emacs
 export VISUAL=emacs
 
+# make Sublime Text the default editor
+# note that after installing sublime for the first time, you need to run:
+# ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+export EDITOR='subl -w'
 
 # ---- shell prompt --------------------------------------------------
 

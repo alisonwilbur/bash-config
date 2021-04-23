@@ -1,3 +1,4 @@
+#!/bin/bash
 # .bashrc_aliases
 
 
@@ -9,21 +10,11 @@ alias mv='mv -i'
 alias la='ls -la'
 alias emoji='cd ~/Documents/slack-emoji/emoji/'
 
-### window management
-# tmux
-#alias tmux='if /usr/bin/tmux has; then /usr/bin/tmux attach; else /usr/bin/tmux new; fi'
-#alias tls='tmux list-sessions'
-#alias ta='tmux a'
-# screen
-#alias sls='screen -ls'
-#alias sc='screen -Ddr'
-
-
 ### grep
 
 # -I skips binary files
-
-alias g='grep -Ir --color=always --exclude={*.min.js,*.log,*.wsdl,*.jar,main.map,emailable-report.html,*build/main.js,*.js.map,*.server.js,package-lock.json} --exclude-dir={*/tmp/cache/templates,bootstrap-3.0.0,target,node_modules,surefire-reports,.git,test-output,.nui,lib,platform-release,build,.nyc_output,lcov-report,coverage}'
+#alias g='grep -Ir --color=always'
+alias g="grep -Ir --color=always --exclude={\*.min.js,\*.log,\*.wsdl,\*.jar,main.map,emailable-report.html,\*build/main.js,\*.js.map,\*.server.js,package-lock.json} --exclude-dir={bootstrap-3.0.0,target,node_modules,surefire-reports,.git,test-output,.nui,lib,platform-release,build,.nyc_output,lcov-report,coverage,cache,.idea}"
 
 alias less='less -R'
 
@@ -62,12 +53,13 @@ alias vi='/bin/env vim'
 #  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
 #fi
 
+alias subz='subl ~/.zshrc'
+alias suba='subl ~/.aliases'
 
 
+### NPM
 
-### N development
-
-alias bs='npm run build && npm run start'
+alias npmbs='npm run build && npm run start'
 alias npmb='npm run build'
 alias npms='npm run start'
 

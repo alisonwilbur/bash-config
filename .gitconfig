@@ -7,7 +7,11 @@
 [alias]
   s = status
   br = branch
+  brd = branch --sort=-committerdate 
+  brdd = git for-each-ref --sort=-committerdate refs/heads/
   co = checkout
+  com = checkout main
+  cp = cherry-pick
   d = diff
   dw = diff --word-diff
   a = add

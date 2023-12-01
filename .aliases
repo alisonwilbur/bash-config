@@ -14,7 +14,10 @@ alias emoji='cd ~/Documents/slack-emoji/emoji/'
 
 # -I skips binary files
 #alias g='grep -Ir --color=always'
-alias g="grep -Ir --color=always --exclude={\*.min.js,\*.log,\*.wsdl,\*.jar,main.map,emailable-report.html,\*build/main.js,\*.js.map,\*.server.js,package-lock.json} --exclude-dir={bootstrap-3.0.0,target,node_modules,surefire-reports,.git,test-output,.nui,lib,platform-release,build,.nyc_output,lcov-report,coverage,cache,.idea}"
+alias g="grep -Ir --color=always \
+  --exclude={\*.min.js,\*.log,\*.wsdl,\*.jar,main.map,emailable-report.html,\*build/main.js,\*.js.map,\*.server.js,package-lock.json,\*.d.ts,yarn.lock,tsconfig.tsbuildinfo} \
+  --exclude-dir={bootstrap-3.0.0,target,node_modules,surefire-reports,.git,test-output,.nui,lib,platform-release,build,.nyc_output,lcov-report,coverage,cache,.idea,Pods} \
+  "
 
 alias less='less -R'
 
@@ -25,15 +28,13 @@ alias gdw='git diff --word-diff'
 alias gs='git status'
 alias gco='git co --'
 alias ga='git add'
-alias gr='git reset HEAD'
+alias grh='git reset HEAD'
 alias gp='git pull'
 alias gpr='git pull --rebase'
+alias gprm='git pull --rebase origin main'
 alias gb='git br'
 alias gph='git push origin HEAD'
 
-function grh {
-  git reset HEAD $1;
-}  
 
 function grhco {
   git reset HEAD $1;
@@ -53,15 +54,26 @@ alias vi='/bin/env vim'
 #  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ${sublime_link}
 #fi
 
+alias sz='source ~/.zshrc'
 alias subz='subl ~/.zshrc'
 alias suba='subl ~/.aliases'
-
 
 ### NPM
 
 alias npmbs='npm run build && npm run start'
 alias npmb='npm run build'
 alias npms='npm run start'
+
+### Yarn
+
+alias yws='yarn workspace web start'
+alias yms='yarn workspace mobile start'
+
+### Maven
+
+alias mlint='mvn antrun:run@ktlint-format'
+alias mci='mvn clean install'
+
 
 
 

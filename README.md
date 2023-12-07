@@ -6,15 +6,18 @@ Git repo for Alison's shell scripts and stuff
 1. Clone this repo into your home directory
 ``` bash
 cd ~
-mkdir Code
-cd Code
-git clone https://github.com/alisonwilbur/bash-config.git 
+
+# If using an SSH key:
+git clone git@github.com:alisonwilbur/bash-config.git
+
+# For a login shell:
+# git clone https://github.com/alisonwilbur/bash-config.git 
 ```
 2. Create symlinks from for these files in the home directory
 ``` bash
-ln -s ~/Code/bash-config/.aliases ~/ ;
-ln -s ~/Code/bash-config/.gitconfig ~/ ;
-ln -s ~/Code/bash-config/.zshrc ~/ ;
+ln -s ~/bash-config/.aliases ~/ ;
+ln -s ~/bash-config/.gitconfig ~/ ;
+ln -s ~/bash-config/.zshrc ~/ ;
 ...
 ```
 Do not make a symlink for the `.git` folder, that is used to configure bash-config as a repo.

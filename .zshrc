@@ -122,9 +122,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # }
 # export PROMPT='${CLOCK}${SEPARATOR}${DIRECTORY}${SEPARATOR}${CYAN}$(parse_git_branch)${SEPARATOR}%% '
 
-if [ -f ~/.git-prompt.sh ]; then
-  source ~/.git-prompt.sh
-fi
+source ~/bash-config/.git-prompt.sh
 # GIT_PS1_SHOWCOLORHINTS=true
 # GIT_PS1_SHOWDIRTYSTATE=true
 

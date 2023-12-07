@@ -17,6 +17,6 @@ ln -s ~/Code/bash-config/.gitconfig ~/ ;
 ln -s ~/Code/bash-config/.zshrc ~/ ;
 ...
 ```
-
+Do not make a symlink for the `.git` folder, that is used to configure bash-config as a repo.
 
 See [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-git-to-manage-your-user-configuration-files-on-a-linux-vps) for more info

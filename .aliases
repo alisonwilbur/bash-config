@@ -1,5 +1,5 @@
-#!/bin/bash
-# .bashrc_aliases
+#!/bin/sh
+# .aliases
 
 
 ### shortcuts
@@ -60,19 +60,19 @@ alias suba='subl ~/.aliases'
 
 ### NPM
 
-alias npmbs='npm run build && npm run start'
-alias npmb='npm run build'
-alias npms='npm run start'
+# alias npmbs='npm run build && npm run start'
+# alias npmb='npm run build'
+# alias npms='npm run start'
 
 ### Yarn
 
 alias yws='yarn workspace web start'
-alias yms='yarn workspace mobile start'
+# alias yms='yarn workspace mobile start'
 
 ### Maven
 
-alias mlint='mvn antrun:run@ktlint-format'
-alias mci='mvn clean install'
+# alias mlint='mvn antrun:run@ktlint-format'
+# alias mci='mvn clean install'
 
 
 

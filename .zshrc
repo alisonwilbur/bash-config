@@ -50,7 +50,8 @@ SAVEHIST=$HISTSIZE
 # Suggest corrections after incorrect commands
 setopt CORRECT
 setopt CORRECT_ALL
-
+# correct tries to "fix" git aliases, so turn it off for that command
+alias git="nocorrect git" 
 
 # ---- imports --------------------------------------------------
 
@@ -66,7 +67,6 @@ if [ -f ~/.bash_hh ]; then
 fi
 
 
-
 # ---- exports --------------------------------------------------
 
 # User specific environment and startup programs
@@ -75,6 +75,7 @@ PATH=$PATH:$HOME/bin
 # for python and AWS CLI
 PATH=$PATH:~/.local/bin
 PATH=/usr/local/opt/openjdk@11/bin:$PATH
+PATH=/opt/homebrew/opt/ruby/bin:$PATH
 export PATH
 
 # This should automatically use user's preferred java version https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux
@@ -142,7 +143,7 @@ source ~/bash-config/.git-prompt.sh
 
 CLOCK='%F{magenta}%D{%H:%M:%S}'
 BLACK='%F{black}'
-DIRECTORY='%F{green}%1~'
+DIRECTORY='%F{green}%~'
 CYAN='%F{cyan}'
 
 setopt PROMPT_SUBST ; PS1='[${CLOCK}${BLACK}--${DIRECTORY}${BLACK}--${CYAN}$(__git_ps1 "(%s)")${BLACK}]\$ '

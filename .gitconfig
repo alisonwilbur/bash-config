@@ -10,6 +10,9 @@
   brd = branch --sort=-committerdate 
   brdd = git for-each-ref --sort=-committerdate refs/heads/
   co = checkout
+  cot = "!f() { \
+    git checkout --track origin/\"$1\"; \
+  }; f"
   com = checkout main
   cp = cherry-pick
   d = diff

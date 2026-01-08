@@ -16,6 +16,7 @@
 # - After installing Sublime, you need to run this to access it from command line:
 # $ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
+echo "Loading .zshrc..."
 
 # ---- zsh settings --------------------------------------------------
 
@@ -73,9 +74,9 @@ fi
 
 PATH=$PATH:$HOME/bin
 # for python and AWS CLI
-PATH=$PATH:~/.local/bin
-PATH=/usr/local/opt/openjdk@11/bin:$PATH
-PATH=/opt/homebrew/opt/ruby/bin:$PATH
+#PATH=$PATH:~/.local/bin
+#PATH=/usr/local/opt/openjdk@11/bin:$PATH
+#PATH=/opt/homebrew/opt/ruby/bin:$PATH
 export PATH
 
 # This should automatically use user's preferred java version https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux
@@ -95,7 +96,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # This is needed to set up homebrew on an M1 mac (but not Intel chip) https://earthly.dev/blog/homebrew-on-m1/
-eval "$(/opt/homebrew/bin/brew shellenv)"
+#eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
 
